@@ -19,6 +19,7 @@ import {QueryRenderer, graphql} from 'react-relay';
 import {Environment, Network, RecordSource, Store} from 'relay-runtime';
 
 import TodoApp from './components/TodoApp';
+import Test from './components/Test';
 
 function fetchQuery(operation, variables) {
   return fetch('/graphql', {
@@ -41,23 +42,24 @@ const modernEnvironment = new Environment({
 });
 
 ReactDOM.render(
-  <QueryRenderer
-    environment={modernEnvironment}
-    query={graphql`
-      query appQuery {
-        viewer {
-          ...TodoApp_viewer
-        }
-      }
-    `}
-    variables={{}}
-    render={({error, props}) => {
-      if (props) {
-        return <TodoApp viewer={props.viewer} />;
-      } else {
-        return <div>Loading</div>;
-      }
-    }}
-  />,
+  <Test />,
+  // <QueryRenderer
+  //   environment={modernEnvironment}
+  //   query={graphql`
+  //     query appQuery {
+  //       viewer {
+  //         ...TodoApp_viewer
+  //       }
+  //     }
+  //   `}
+  //   variables={{}}
+  //   render={({error, props}) => {
+  //     if (props) {
+  //       return <TodoApp viewer={props.viewer} />;
+  //     } else {
+  //       return <div>Loading</div>;
+  //     }
+  //   }}
+  // />,
   document.getElementById('root'),
 );

@@ -3,6 +3,7 @@
   "scripts": {
     "start": "babel-node ./server.js",
     "build": "relay-compiler --src ./js/ --schema ./data/schema.graphql",
+    "find-queries": "babel-node ./scripts/find-queries",
     "update-schema": "babel-node ./scripts/updateSchema.js",
     "prettier": "find . \\( -name node_modules -o -name __generated__ \\) -prune -or \\( -name '*.js' -o -name '*.css' -o -name '*.json' -o -name '*.md' \\) -print | xargs prettier --write"
   },
@@ -25,6 +26,7 @@
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-relay": "^1.7.0",
+    "react-test-renderer": "^16.6.3",
     "todomvc-app-css": "^2.1.2",
     "todomvc-common": "^1.0.3",
     "webpack": "^4.18.0",
@@ -33,6 +35,8 @@
   },
   "devDependencies": {
     "@babel/node": "^7.0.0",
+    "jest": "^23.6.0",
+    "react-testing-library": "^5.3.1",
     "relay-compiler": "^1.7.0"
   },
   "prettier": {

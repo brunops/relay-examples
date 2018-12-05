@@ -54,6 +54,7 @@ app.use(
   graphQLHTTP({
     schema: schema,
     pretty: true,
+    graphiql: true
   }),
 );
 
